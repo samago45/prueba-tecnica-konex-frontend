@@ -1,0 +1,84 @@
+
+<div class="container">
+  <div class="car">
+    <h1 class="d-flex justify-content-center py-5 ">Inventario de Remedios</h1>
+    <div class="car">
+      <nav class="navbar bg-body-tertiary border-2">
+        <div class="container">
+          <div class="btn-funtions py-2">
+            <button type="button " data-bs-toggle="modal" data-bs-target="#exampleModal"
+              class="btn  btn-warning me-2 " >Agregar</button>
+            <button type="button " class="btn  btn-success">Informe</button>
+          </div>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-primary" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="car py-2">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">Medicamento</th>
+                <th scope="col">Laboratorio</th>
+                <th scope="col">Fecha de Fabricacion </th>
+                <th scope="col">Fecha de Vencimiento </th>
+                <th scope="col">Stock </th>
+                <th scope="col">Valor Unitario </th>
+                <th scope="col ">Acciones </th>
+              </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor=" let inventarios of inventarios">
+                <td>{{inventarios.nombre}}</td>
+                <td>{{inventarios.laboratorioDeFabricacion  }}</td>
+                <td>{{inventarios.fechaDeFabricacion  | date: "dd/MM/yyyy" }}</td>
+                <td>{{inventarios.fechaDeVencimento | date: "dd/MM/yyyy" }}</td>
+                <td>{{inventarios.stock}}</td>
+                <td>{{inventarios.valorUnitario}}</td> 
+                <td>
+                  <div class="container">
+                    <div class="btn btn-outline-primary me-2" >editar</div>
+                    <div class="btn btn-outline-danger me-2">eliminar</div>
+                    <div class="btn btn-outline-success">vender</div>
+                  </div>
+                </td>
+              </tr> 
+            </tbody>
+          </table>
+          <div class="row">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
